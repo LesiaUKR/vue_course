@@ -1,8 +1,8 @@
 
 <template>
-<h1 class="text-6xl mt-8 text-center">Hello world!</h1>
+<MainNav />
 </template>
 
 <script setup>
-
+import MainNav from "@/components/MainNav.vue"
 </script>
