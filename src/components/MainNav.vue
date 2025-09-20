@@ -20,6 +20,10 @@
             </li>
           </ul>
         </nav>
+        <div class="ml-auto flex h-full items-center">
+          <ProfileImage v-if="isLoggedIn" />
+          <ActionButton v-else @click="loginUser" :text="buttonText" />
+        </div>
       </div>
     </div>
   </header>
@@ -27,9 +31,12 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-
+import ActionButton from '@/components/ActionButton.vue'
+import ProfileImage from '@/components/ProfileImage.vue'
 const company = ref('Bobo Careers')
 const companyUrl = ref('https://bobocareers.com')
+const isLoggedIn = ref(false)
+const buttonText = ref('Sign in')
 const menuItems = [
   'Teams',
   'Location',
@@ -38,4 +45,7 @@ const menuItems = [
   'Students',
   'Jobs',
 ]
+const loginUser = () => {
+  isLoggedIn.value = true
+}
 </script>
