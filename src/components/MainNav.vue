@@ -30,6 +30,7 @@
           />
         </div>
       </div>
+      <TheSubnav v-if="isLoggedIn" />
     </div>
   </header>
 </template>
@@ -38,6 +39,7 @@
 import { ref } from 'vue'
 import ActionButton from '@/components/ActionButton.vue'
 import ProfileImage from '@/components/ProfileImage.vue'
+import TheSubnav from '@/components/TheSubnav.vue'
 const company = ref('Bobo Careers')
 const companyUrl = ref('https://bobocareers.com')
 const isLoggedIn = ref(false)
